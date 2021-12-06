@@ -126,7 +126,7 @@ const submit = async ({productPath, archivePath, primaryBundleId, username, pass
         args.push("--verbose");
     }
 
-    let xcrun = execa("xcrun", args, {reject: false});
+    let xcrun = execa("/usr/bin/xcrun", args, {reject: false});
 
     if (verbose == true) {
         xcrun.stdout.pipe(process.stdout);
@@ -177,7 +177,7 @@ const wait = async ({uuid, username, password, verbose}) => {
     }
 
     for (let i = 0; i < 10; i++) {
-        let xcrun = execa("xcrun", args, {reject: false});
+        let xcrun = execa("/usr/bin/xcrun", args, {reject: false});
 
         if (verbose == true) {
             xcrun.stdout.pipe(process.stdout);
